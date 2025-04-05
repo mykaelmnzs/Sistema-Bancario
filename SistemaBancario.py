@@ -11,7 +11,7 @@ Selecione a opção desejada:
 saldo=0 #Saldo inicial da conta
 limite=500 # Valor máximo do saque
 extrato="" # Armazena as transações
-Numeros_Saques=0 # Contabiliza a quantidade dos saques
+Quantidade_Saques=0 # Contabiliza a quantidade dos saques
 LIMITE_SAQUE=3 # Limite de saques diário
 
 while True:
@@ -31,7 +31,7 @@ while True:
         
         saldo_insuficiente = saque > saldo  # Verifica se o saldo é suficiente
         saque_acima_limite = saque > limite  # Verifica se o saque excede o limite
-        saques_exedidos = LIMITE_SAQUE <= Numeros_Saques # Verifica se excedeu o limite de saques
+        saques_exedidos = LIMITE_SAQUE <= Quantidade_Saques # Verifica se excedeu o limite de saques
             
         if saldo_insuficiente:
             print("Falha na operação! A conta não possui saldo suficiente. ")     
@@ -42,7 +42,7 @@ while True:
         elif saque > 0:
              saldo -= saque # Subtrai o valor ao saldo
              extrato += f"Saque:R$ {saque:.2f}\n" # Registra a transação no extrato
-             Numeros_Saques += 1  # Incrementa o contador de saques
+             Quantidade_Saques += 1  # Incrementa o contador de saques
         else:
             print("Por favor digite um valor válido")
                               
@@ -58,4 +58,5 @@ while True:
 
     else:
         print("Por favor selecione uma opção valida") # Opção inválida
+
 
